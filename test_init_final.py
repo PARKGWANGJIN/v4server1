@@ -536,7 +536,7 @@ async def dbSave():
 	
 	datelist = list(set(datelist1))
 
-	information1 = '----- 4서버 보스 정보 (컷하면 컷시간 입력 필수 !)-----\n'
+	information1 = '💎 4서버 보스 정보 💎\n💡 컷하면 컷시간 입력 필수!\n'
 	for timestring in sorted(datelist):
 		for i in range(bossNum):
 			if timestring == bossTime[i]:
@@ -1603,8 +1603,8 @@ class mainCog(commands.Cog):
 
 			await dbSave()
 
-			await ctx.send('< 4서버 보스탐 초기화 완료 >', tts=False)
-			print ("< 4서버 보스탐 초기화 완료 >")
+			await ctx.send('< 🥺 4서버 봇 초기화 완료 >', tts=False)
+			print ("< 🥺 4서버 봇 초기화 완료 >")
 		else:
 			return
 
@@ -1628,7 +1628,7 @@ class mainCog(commands.Cog):
 				if voice_client.is_playing():
 					voice_client.stop()
 				await voice_client.disconnect(force=True)
-			print("4서버 봇 재시작 됩니다.")
+			print("🙈 4서버 봇 재시작 됩니다.")
 			await asyncio.sleep(2)
 
 			inidata_restart = repo_restart.get_contents("restart.txt")
@@ -1667,7 +1667,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 4서버 미예약 보스 -----",
+						title = "😭 4서버 미예약 보스 😭",
 						description= tmp_boss_information[0],
 						color=0x0000ff
 						)
@@ -1682,7 +1682,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-					title = "----- 4서버 미예약 보스 -----",
+					title = "😭 4서버 미예약 보스 😭",
 					description= tmp_boss_information[0],
 					color=0x0000ff
 					)
@@ -1849,7 +1849,7 @@ class mainCog(commands.Cog):
 				result = wks.acell(basicSetting[16]).value
 
 				embed = discord.Embed(
-						description= '```' + SearchID + ' 님이 받을 다이야는 ' + result + ' 다이야 입니다.```',
+						description= '```' + SearchID + ' 님이 받을 🍓는 ' + result + ' 🍓 입니다.```',
 						color=0xff00ff
 						)
 				await ctx.send(embed=embed, tts=False)
@@ -2068,7 +2068,7 @@ class mainCog(commands.Cog):
 								hours, remainder = divmod(total_seconds,60*60)
 								minutes, seconds = divmod(remainder,60)
 
-								result_lefttime += '다음 ' + ouput_bossData[i][0] + '탐까지 %02d:%02d:%02d 남았습니다. ' % (hours,minutes,seconds) + '[' +  ouput_bossData[i][2] + ']\n'
+								result_lefttime += '🏳️ 다음 ' + ouput_bossData[i][0] + '젠시간 까지 %02d:%02d:%02d 남았습니다. ' % (hours,minutes,seconds) + '[' +  ouput_bossData[i][2] + ']\n'
 				else :
 					for j in range(len(sorted_datelist)):
 						for i in range(len(ouput_bossData)):						
@@ -2079,7 +2079,7 @@ class mainCog(commands.Cog):
 								hours, remainder = divmod(total_seconds,60*60)
 								minutes, seconds = divmod(remainder,60)
 
-								result_lefttime += '다음 ' + ouput_bossData[i][0] + '탐까지 %02d:%02d:%02d 남았습니다. ' % (hours,minutes,seconds) + '[' +  ouput_bossData[i][2] + ']\n'
+								result_lefttime += '🏳️ 다음 ' + ouput_bossData[i][0] + '젠시간 까지 %02d:%02d:%02d 남았습니다. ' % (hours,minutes,seconds) + '[' +  ouput_bossData[i][2] + ']\n'
 				embed = discord.Embed(
 					description= result_lefttime,
 					color=0xff0000
@@ -2288,12 +2288,12 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 4서버 보스 정보 (컷하면 컷시간 입력 필수 !)-----",
+						title = "💎 4서버 보스 정보 💎\n💡 컷하면 컷시간 입력 필수!\n",
 						description= boss_information[0],
 						color=0x0000ff
 						)
 				embed.add_field(
-						name="----- 4서버 미예약 보스 -----",
+						name="😭 4서버 미예약 보스 😭",
 						value= tmp_boss_information[0],
 						inline = False
 						)				
@@ -2306,7 +2306,7 @@ class mainCog(commands.Cog):
 					boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 4서버 보스 정보 (컷하면 컷시간 입력 필수 !)-----",
+						title = "💎 4서버 보스 정보 💎\n💡 컷하면 컷시간 입력 필수!\n",
 						description= boss_information[0],
 						color=0x0000ff
 						)
@@ -2333,7 +2333,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-					title = "----- 4서버 미예약 보스 -----",
+					title = "😭 4서버 미예약 보스 😭",
 					description= tmp_boss_information[0],
 					color=0x0000ff
 					)
@@ -2518,7 +2518,7 @@ class mainCog(commands.Cog):
 				tmp_boss_information[0] = '``` ```'
 
 			embed = discord.Embed(
-				title = "----- 4서버 미예약 보스 -----",
+				title = "😭 4서버 미예약 보스 😭",
 				description= tmp_boss_information[0],
 				color=0x0000ff
 				)
@@ -3205,7 +3205,7 @@ class mainCog(commands.Cog):
 
 		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
 			if not args:
-				return await ctx.send(f"**{command[35][0]} [판매금액] (거래소세금)** 양식으로 입력 해주세요\n※ 거래소세금은 미입력시 5%입니다.")
+				return await ctx.send(f"**{command[35][0]} [판매금액] (거래소수수료)** 양식으로 입력 해주세요\n※ 거래소수수료는 미입력시 5%입니다.")
 			
 			input_money_data : list = args.split()
 			len_input_money_data = len(input_money_data)
@@ -3214,10 +3214,10 @@ class mainCog(commands.Cog):
 				for i in range(len_input_money_data):
 					input_money_data[i] = int(input_money_data[i])
 			except ValueError:
-				return await ctx.send(f"**[판매금액] (거래소세금)**은 숫자로 입력 해주세요.")
+				return await ctx.send(f"**[판매금액] (거래소수수료)**은 숫자로 입력 해주세요.")
 
 			if len_input_money_data < 1 or len_input_money_data > 3:
-				return await ctx.send(f"**{command[35][0]} [판매금액] (거래소세금)** 양식으로 입력 해주세요\n※ 거래소세금은 미입력시 5%입니다.")
+				return await ctx.send(f"**{command[35][0]} [판매금액] (거래소수수료)** 양식으로 입력 해주세요\n※ 거래소수수료는 미입력시 5%입니다.")
 			elif len_input_money_data == 2:
 				tax = input_money_data[1]
 			else:
@@ -3228,13 +3228,13 @@ class mainCog(commands.Cog):
 			price_rev_tax = int((input_money_data[0] * 100)/(100-tax)+0.5)
 
 			embed = discord.Embed(
-					title = f"🧮  수수료 계산결과 (세율 {tax}% 기준) ",
+					title = f"🍓  수수료 계산결과 (🍓 수수료 {tax}% 기준) ",
 					description = f"",
 					color=0x00ff00
 					)
-			embed.add_field(name = "⚖️ 수수료 지원", value = f"```등록가 : {price_rev_tax}\n수령가 : {input_money_data[0]}\n세 금 : {price_rev_tax-input_money_data[0]}```")
-			embed.add_field(name = "⚖️ 1차 거래", value = f"```등록가 : {input_money_data[0]}\n정산가 : {price_first_tax}\n세 금 : {input_money_data[0]-price_first_tax}```")
-			embed.add_field(name = "⚖️ 2차 거래", value = f"```등록가 : {price_first_tax}\n정산가 : {price_second_tax}\n세 금 : {price_first_tax-price_second_tax}```")
+			embed.add_field(name = "⚖️ 수수료지원 O", value = f"```등록가 : {price_rev_tax}\n수령가 : {input_money_data[0]}\n수수료 : {price_rev_tax-input_money_data[0]}```")
+			embed.add_field(name = "⚖️ 수수료지원 X", value = f"```등록가 : {input_money_data[0]}\n정산가 : {price_first_tax}\n수수료 : {input_money_data[0]-price_first_tax}```")
+			#embed.add_field(name = "⚖️ 2차 거래", value = f"```등록가 : {price_first_tax}\n정산가 : {price_second_tax}\n세 금 : {price_first_tax-price_second_tax}```")
 			return await ctx.send(embed = embed)
 		else:
 			return
@@ -3247,7 +3247,7 @@ class mainCog(commands.Cog):
 
 		if ctx.message.channel.id == basicSetting[7] or ctx.message.channel.id == basicSetting[20]:
 			if not args:
-				return await ctx.send(f"**{command[36][0]} [거래소가격] [실거래가] (거래소세금)** 양식으로 입력 해주세요\n※ 거래소세금은 미입력시 5%입니다.")
+				return await ctx.send(f"**{command[36][0]} [거래소가격] [실거래가] (거래소수수료)** 양식으로 입력 해주세요\n※ 거래소수수료은 미입력시 5%입니다.")
 			
 			input_money_data : list = args.split()
 			len_input_money_data = len(input_money_data)
@@ -3256,10 +3256,10 @@ class mainCog(commands.Cog):
 				for i in range(len_input_money_data):
 					input_money_data[i] = int(input_money_data[i])
 			except ValueError:
-				return await ctx.send(f"**[판매금액] (거래소세금)**은 숫자로 입력 해주세요.")
+				return await ctx.send(f"**[판매금액] (거래소수수료)**은 숫자로 입력 해주세요.")
 
 			if len_input_money_data < 2 or len_input_money_data > 4:
-				return await ctx.send(f"**{command[36][0]} [거래소가격] [실거래가] (거래소세금)** 양식으로 입력 해주세요\n※ 거래소세금은 미입력시 5%입니다.")
+				return await ctx.send(f"**{command[36][0]} [거래소가격] [실거래가] (거래소세금)** 양식으로 입력 해주세요\n※ 거래소수수료은 미입력시 5%입니다.")
 			elif len_input_money_data == 3:
 				tax = input_money_data[2]
 			else:
@@ -3272,20 +3272,20 @@ class mainCog(commands.Cog):
 			reault_payback1= price_reg_tax - input_money_data[1]
 
 			embed = discord.Embed(
-					title = f"🧮  페이백 계산결과1 (세율 {tax}% 기준) ",
+					title = f"🍓  페이백 계산결과1 (수수료 {tax}% 기준) ",
 					description = f"**```fix\n{reault_payback}```**",
 					color=0x00ff00
 					)
-			embed.add_field(name = "⚖️ 거래소", value = f"```등록가 : {input_money_data[0]}\n정산가 : {price_reg_tax}\n세 금 : {input_money_data[0]-price_reg_tax}```")
-			embed.add_field(name = "🕵️ 실거래", value = f"```등록가 : {input_money_data[1]}\n정산가 : {price_real_tax}\n세 금 : {input_money_data[1]-price_real_tax}```")
+			embed.add_field(name = "⚖️ 거래소", value = f"```등록가 : {input_money_data[0]}\n정산가 : {price_reg_tax}\n수수료 : {input_money_data[0]-price_reg_tax}```")
+			embed.add_field(name = "🕵️ 실거래", value = f"```등록가 : {input_money_data[1]}\n정산가 : {price_real_tax}\n수수료 : {input_money_data[1]-price_real_tax}```")
 			await ctx.send(embed = embed)
 
 			embed2 = discord.Embed(
-					title = f"🧮  페이백 계산결과2 (세율 {tax}% 기준) ",
+					title = f"🍓  페이백 계산결과2 (수수료 {tax}% 기준) ",
 					description = f"**```fix\n{reault_payback1}```**",
 					color=0x00ff00
 					)
-			embed2.add_field(name = "⚖️ 거래소", value = f"```등록가 : {input_money_data[0]}\n정산가 : {price_reg_tax}\n세 금 : {input_money_data[0]-price_reg_tax}```")
+			embed2.add_field(name = "⚖️ 거래소", value = f"```등록가 : {input_money_data[0]}\n정산가 : {price_reg_tax}\n수수료 : {input_money_data[0]-price_reg_tax}```")
 			embed2.add_field(name = "🕵️ 실거래", value = f"```내판가 : {input_money_data[1]}```")
 			return await ctx.send(embed = embed2)
 		else:
