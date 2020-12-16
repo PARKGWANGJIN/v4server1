@@ -257,8 +257,9 @@ def init():
 		basicSetting.append(inputData[6][16:])     #basicSetting[19] : racing 채널 ID
 		basicSetting.append(inputData[7][14:])     #basicSetting[20] : item 채널 ID
 		basicSetting.append(inputData[21][12:])     #basicSetting[21] : voice_use
-		basicSetting.append(inputData[23][15:])     #basicSetting[22] : fildBoss1
-		basicSetting.append(inputData[24][16:])     #basicSetting[23] : fildBoss2
+		basicSetting.append(inputData[11][11:])     #basicSetting[22] : mungChk2
+		basicSetting.append(inputData[22][15:])     #basicSetting[23] : fildBoss1
+		basicSetting.append(inputData[23][16:])     #basicSetting[24] : fildBoss2
 	except:
 		raise Exception("[test_setting.ini] 파일 양식을 확인하세요.")
 
