@@ -536,7 +536,7 @@ async def dbSave():
 	
 	datelist = list(set(datelist1))
 
-	information1 = '----- 4서버 보스탐 정보 (컷하면 컷시간 입력 필수 !)-----\n'
+	information1 = '----- 4서버 보스 정보 (컷하면 컷시간 입력 필수 !)-----\n'
 	for timestring in sorted(datelist):
 		for i in range(bossNum):
 			if timestring == bossTime[i]:
@@ -893,8 +893,8 @@ class taskCog(commands.Cog):
 			priv0 = now+datetime.timedelta(minutes=int(basicSetting[3]))
 			priv = now+datetime.timedelta(minutes=int(basicSetting[1]))
 			tmp_aftr1 = now+datetime.timedelta(minutes=int(0-int(basicSetting[2])))
-			tmp_aftr2 = now+datetime.timedelta(minutes=int(0-int(basicSetting[1000])))
-			
+			tmp_aftr2 = now+datetime.timedelta(minutes=int(0-int(basicSetting[22])))
+
 			if channel != '':			
 				################ 보탐봇 재시작 ################ 
 				if endTime.strftime('%Y-%m-%d ') + endTime.strftime('%H:%M:%S') == now.strftime('%Y-%m-%d ') + now.strftime('%H:%M:%S'):
@@ -937,7 +937,7 @@ class taskCog(commands.Cog):
 								await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
 								try:
 									if basicSetting[21] == "1":
-										await PlaySound(self.bot.voice_clients[0], './sound/필드보스오분전.mp3')
+										await PlaySound(self.bot.voice_clients[0], './sound/' + fixed_bossData[i][0] + '알림1.mp3')
 								except:
 									pass
 
@@ -1073,7 +1073,7 @@ class taskCog(commands.Cog):
 										await self.bot.get_channel(channel).send(embed=embed, tts=False)
 										try:
 											if basicSetting[21] == "1":
-												await PlaySound(self.bot.voice_clients[0], './sound/미입력.mp3')
+												await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '미입력.mp3')
 										except:
 											pass
 									################ 멍 보스 ################
@@ -1628,7 +1628,7 @@ class mainCog(commands.Cog):
 				if voice_client.is_playing():
 					voice_client.stop()
 				await voice_client.disconnect(force=True)
-			print("4서버 보스탐 봇 재시작 됩니다.")
+			print("4서버 봇 재시작 됩니다.")
 			await asyncio.sleep(2)
 
 			inidata_restart = repo_restart.get_contents("restart.txt")
@@ -1667,7 +1667,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 4서버 보스탐 미예약 보스 -----",
+						title = "----- 4서버 미예약 보스 -----",
 						description= tmp_boss_information[0],
 						color=0x0000ff
 						)
@@ -1682,7 +1682,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-					title = "----- 4서버 보스탐 미예약 보스 -----",
+					title = "----- 4서버 미예약 보스 -----",
 					description= tmp_boss_information[0],
 					color=0x0000ff
 					)
@@ -2288,12 +2288,12 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 4서버 보스탐 정보 (컷하면 컷시간 입력 필수 !)-----",
+						title = "----- 4서버 보스 정보 (컷하면 컷시간 입력 필수 !)-----",
 						description= boss_information[0],
 						color=0x0000ff
 						)
 				embed.add_field(
-						name="----- 4서버 보스탐 미예약 보스 -----",
+						name="----- 4서버 미예약 보스 -----",
 						value= tmp_boss_information[0],
 						inline = False
 						)				
@@ -2306,7 +2306,7 @@ class mainCog(commands.Cog):
 					boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-						title = "----- 4서버 보스탐 정보 (컷하면 컷시간 입력 필수 !)-----",
+						title = "----- 4서버 보스 정보 (컷하면 컷시간 입력 필수 !)-----",
 						description= boss_information[0],
 						color=0x0000ff
 						)
@@ -2333,7 +2333,7 @@ class mainCog(commands.Cog):
 					tmp_boss_information[0] = '``` ```'
 
 				embed = discord.Embed(
-					title = "----- 4서버 보스탐 미예약 보스 -----",
+					title = "----- 4서버 미예약 보스 -----",
 					description= tmp_boss_information[0],
 					color=0x0000ff
 					)
@@ -2490,7 +2490,7 @@ class mainCog(commands.Cog):
 				boss_information[0] = '``` ```'
 
 			embed = discord.Embed(
-					title = "----- 4서버 보스탐 정보 (컷하면 컷시간 입력 필수 !)-----",
+					title = "----- 4서버 보스 정보 (컷하면 컷시간 입력 필수 !)-----",
 					description= boss_information[0],
 					color=0x0000ff
 					)
@@ -2518,7 +2518,7 @@ class mainCog(commands.Cog):
 				tmp_boss_information[0] = '``` ```'
 
 			embed = discord.Embed(
-				title = "----- 4서버 보스탐 미예약 보스 -----",
+				title = "----- 4서버 미예약 보스 -----",
 				description= tmp_boss_information[0],
 				color=0x0000ff
 				)
@@ -3523,10 +3523,7 @@ class mainCog(commands.Cog):
 			return await ctx.send('```보이스를 사용하지 않도록 설정되어 있습니다.```', tts=False)
 		resultTJ = random.randrange(1,9)
 		return await PlaySound(ctx.voice_client, './sound/TJ' + str(resultTJ) +'.mp3')
-					
-	#제트서프코리아 이미지#
-	@commands.command(name=command[43][0], aliases=command[43][1:])
-	async def sufImage(self, ctx):
+
 class IlsangDistributionBot(commands.AutoShardedBot):
 	def __init__(self):
 		super().__init__(command_prefix=[""], help_command=None)
