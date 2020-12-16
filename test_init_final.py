@@ -1073,7 +1073,7 @@ class taskCog(commands.Cog):
 										await self.bot.get_channel(channel).send(embed=embed, tts=False)
 										try:
 											if basicSetting[21] == "1":
-												await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '미입력.mp3')
+												await PlaySound(self.bot.voice_clients[0], './sound/미입력.mp3')
 										except:
 											pass
 									################ 멍 보스 ################
