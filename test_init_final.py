@@ -258,8 +258,6 @@ def init():
 		basicSetting.append(inputData[7][14:])     #basicSetting[20] : item 채널 ID
 		basicSetting.append(inputData[21][12:])     #basicSetting[21] : voice_use
 		basicSetting.append(inputData[11][11:])     #basicSetting[22] : mungChk2
-		basicSetting.append(inputData[22][15:])     #basicSetting[23] : fildBoss1
-		basicSetting.append(inputData[23][16:])     #basicSetting[24] : fildBoss2
 	except:
 		raise Exception("[test_setting.ini] 파일 양식을 확인하세요.")
 
@@ -896,8 +894,6 @@ class taskCog(commands.Cog):
 			priv = now+datetime.timedelta(minutes=int(basicSetting[1]))
 			tmp_aftr1 = now+datetime.timedelta(minutes=int(0-int(basicSetting[2])))
 			tmp_aftr2 = now+datetime.timedelta(minutes=int(0-int(basicSetting[1000])))
-			fildBossPriv0 = now+datetime.timedelta(minutes=int(basicSetting[24]))
-			fildBossPriv = now+datetime.timedelta(minutes=int(basicSetting[23]))
 			
 			if channel != '':			
 				################ 보탐봇 재시작 ################ 
@@ -933,27 +929,27 @@ class taskCog(commands.Cog):
 
 				################ 고정 보스 확인 ################ 
 				for i in range(fixed_bossNum):
-					################ fildBoss2 ################ 
-					if fixed_bossTime[i] <= fildBossPriv0 and fixed_bossTime[i] > fildBossPriv:
+					################ before_alert1 ################ 
+					if fixed_bossTime[i] <= priv0 and fixed_bossTime[i] > priv:
 						if basicSetting[3] != '0':
 							if fixed_bossFlag0[i] == False:
 								fixed_bossFlag0[i] = True
 								await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
 								try:
 									if basicSetting[21] == "1":
-										await PlaySound(self.bot.voice_clients[0], './sound/필드보스십분전.mp3')
+										await PlaySound(self.bot.voice_clients[0], './sound/필드보스오분전.mp3')
 								except:
 									pass
 
-					################ fildBoss1 ################ 
-					if fixed_bossTime[i] <= fildBossPriv and fixed_bossTime[i] > now:
+					################ before_alert ################ 
+					if fixed_bossTime[i] <= priv and fixed_bossTime[i] > now:
 						if basicSetting[1] != '0' :
 							if fixed_bossFlag[i] == False:
 								fixed_bossFlag[i] = True
 								await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
 								try:
 									if basicSetting[21] == "1":
-										await PlaySound(self.bot.voice_clients[0], './sound/필드보스오분전.mp3')
+										await PlaySound(self.bot.voice_clients[0], './sound/' + fixed_bossData[i][0] + '알림.mp3')
 								except:
 									pass
 					
