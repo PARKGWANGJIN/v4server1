@@ -3905,6 +3905,11 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 		await super().close()
 		print("V4 발리언 디코봇 종료 완료.")
 
+	# 매일 12시 30분에 실행
+	@sched.scheduled_job('cron', hour='03', minute='01', id='test_2')
+	def job2():
+	    await PlaySound(self.bot.voice_clients[0], './sound/4시알림.mp3')
+		  
 ilsang_distribution_bot : IlsangDistributionBot = IlsangDistributionBot()
 ilsang_distribution_bot.add_cog(mainCog(ilsang_distribution_bot))
 ilsang_distribution_bot.add_cog(taskCog(ilsang_distribution_bot))
