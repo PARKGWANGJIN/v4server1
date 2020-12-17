@@ -468,20 +468,6 @@ def init():
 
 init()
 
-#일정시간 실행
-#특정 함수 정의
-def printhello():
-    print("Hello!")
- 
- 
-schedule.every(30).minutes.do(printhello) #30분마다 실행
-schedule.every().day.at("03:30").do(printhello) #매일 10시30분에 
- 
-#실제 실행하게 하는 코드
-while True:
-    schedule.run_pending()
-    time.sleep(1)
-
 channel = ''
 
 #mp3 파일 생성함수(gTTS 이용, 남성목소리)
